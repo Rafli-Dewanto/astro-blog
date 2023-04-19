@@ -1,0 +1,15 @@
+---
+const { platform, username } = Astro.props;
+---
+
+<a
+    target='_blank'
+    class='underline-from-center transition-all hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-[#FF78F0] hover:to-[#F5EA5A]'
+    href={`https://www.${platform}.com/${username}`}>{platform}</a
+>
+
+<style>
+    a {
+        padding: 0.5rem 1rem;
+    }
+</style>

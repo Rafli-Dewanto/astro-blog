@@ -1,0 +1,16 @@
+---
+import BlogPost from "../components/BlogPost.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/globals.css";
+const allPosts = await Astro.glob("../pages/posts/*.md");
+---
+
+<BaseLayout>
+    <h1 class="gradient-text">Blog</h1>
+    <ul>
+        {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+    </ul>
+    <script>
+        import "../scripts/menu.js";
+    </script>
+</BaseLayout>
